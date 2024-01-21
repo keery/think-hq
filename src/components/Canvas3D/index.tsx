@@ -1,14 +1,16 @@
-import React, { Suspense } from "react";
+import React from "react";
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei";
 
 import CameraAnimation from "./CameraAnimation";
 import Lights from "./Lights";
+import Loader from "./Loader";
 import Scene from "./Scene";
 
-const ThreeDCanvas = () => {
+const Canvas3D = () => {
   return (
-    <div className="h-96 w-full md:h-[41.563rem]">
+    <div className="relative h-96 w-full md:h-[41.563rem]">
+      <Loader />
       <Canvas
         camera={{
           position: [-2000, 500, 2],
@@ -17,16 +19,14 @@ const ThreeDCanvas = () => {
           near: 1,
         }}
       >
-        <Suspense fallback="Loading">
-          <color attach="background" args={[0, 0, 0]} />
-          <Lights />
-          <OrbitControls />
-          <CameraAnimation />
-          <Scene />
-        </Suspense>
+        <color attach="background" args={[0, 0, 0]} />
+        <Lights />
+        <OrbitControls />
+        <CameraAnimation />
+        <Scene />
       </Canvas>
     </div>
   );
 };
 
-export default ThreeDCanvas;
+export default Canvas3D;

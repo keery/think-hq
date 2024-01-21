@@ -5,6 +5,7 @@
 body {
   color: theme("colors.gray.800");
   line-height: normal;
+  overflow-x: hidden;
 }
 
 @layer base {

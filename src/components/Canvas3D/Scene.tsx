@@ -24,13 +24,14 @@ type GLTFResult = GLTF & {
 };
 
 export default function Scene() {
+  // Loading 3D gtlf model
   const { nodes, materials } = useGLTF(
-    "/3d-models/lonely_watcher/source/sea_keep_lonely_watcher.gltf"
+    "/3d-models/lonely_watcher/source/sea_keep_lonely_watcher.gltf",
   ) as GLTFResult;
 
   // To fix materials becoming transparent while moving camera, issue with initila gtlf
   (Object.keys(materials) as Array<keyof IMaterials>).map(
-    (name) => (materials[name].depthWrite = true)
+    (name) => (materials[name].depthWrite = true),
   );
 
   return (

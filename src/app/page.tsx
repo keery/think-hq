@@ -7,7 +7,7 @@ export default function Home() {
   const { theme } = resolveConfig(tailwindConfig);
 
   return (
-    <main className="m-auto min-h-screen max-w-screen-2xl overflow-hidden px-6 md:px-8 2xl:px-14">
+    <main className="m-auto min-h-screen max-w-screen-2xl px-6 md:px-8 2xl:px-14">
       <h1>
         The power <span className="sm:hidden">{"\n"}</span>
         of <i className="font-eb-garamond sm:block">collective creativity.</i>
